@@ -5,12 +5,13 @@ import { HttpModule} from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DataService } from './shared/data.service';
+import { DataService } from './services/shared/data.service';
+import { AuthGuard } from './services/auth/authGuard.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, AppRoutingModule ],
   declarations: [ AppComponent, AppRoutingModule.components ],
-  providers:    [ DataService ],
+  providers:    [ DataService, AuthGuard ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
